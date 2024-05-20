@@ -1,5 +1,5 @@
 {
-  "name": "@multiversx/sdk-web-wallet-io",
+  "name": "@multiversx/sdk-js-web-wallet-io",
   "version": "0.0.0",
   "main": "out/index.js",
   "types": "out/index.d.ts",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/multiversx/mx-sdk-dapp-core.git"
+    "url": "git+https://github.com/multiversx/mx-sdk-js-web-wallet-io.git"
   },
   "scripts": {
     "compile": "tsc && tsc-alias",
