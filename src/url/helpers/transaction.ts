@@ -1,18 +1,15 @@
-import { TFunction } from 'i18next';
 import { string, mixed, AnySchema, object } from 'yup';
-import { NetworkType } from 'config/sharedConfig';
-import { isContract, stringIsInteger, isNftOrMultiEsdtTx } from 'helpers';
 import { validUrlSchema } from './validUrlSchema';
+import { isContract, stringIsInteger } from 'lib';
+import { isNftOrMultiEsdtTx } from 'helpers';
 
 export interface TransactionFieldsType {
-  t: TFunction;
   isMainnet: boolean;
-  hookWhitelist?: NetworkType['hookWhitelist'];
+  hookWhitelist?: string[];
   isSignHook?: boolean;
 }
 
 export const transactionFields = ({
-  t,
   isMainnet,
   hookWhitelist,
   isSignHook = false
@@ -22,36 +19,28 @@ export const transactionFields = ({
     token: string().when(['data'], (data: string, schema: AnySchema) => {
       return schema.test(
         'notAllowed',
-        t('Token and data not allowed'),
+        'Token and data not allowed',
         (value: any) => !Boolean(value && data)
       );
     }),
     sender: string(),
-    gasLimit: string().test(
-      'validInteger',
-      t('Gas limit invaild number'),
-      (value) => {
-        if (value != null && value !== '') {
-          return stringIsInteger(value);
-        }
-        return true;
+    gasLimit: string().test('validInteger', 'Gas limit invaild', (value) => {
+      if (value != null && value !== '') {
+        return stringIsInteger(value);
       }
-    ),
-    gasPrice: string().test(
-      'validFloat',
-      t('Gas price invaild number'),
-      (value) => {
-        if (value != null && value !== '') {
-          return stringIsInteger(value);
-        }
-        return true;
+      return true;
+    }),
+    gasPrice: string().test('validFloat', 'Gas price invaild', (value) => {
+      if (value != null && value !== '') {
+        return stringIsInteger(value);
       }
-    ),
+      return true;
+    }),
     receiver: string()
       .required()
       .test(
         'allowed',
-        t('Receiver address not allowed'),
+        'Receiver address not allowed',
         function checkReceiver(value) {
           const data: string = this.parent.data;
           const decodedData = decodeURIComponent(data);
@@ -72,21 +61,17 @@ export const transactionFields = ({
         }
       ),
     value: string()
-      .test(
-        'required',
-        t('Value field required'),
-        function checkReceiver(value) {
-          const data: string = this.parent.data;
-          const decodedData = decodeURIComponent(data);
+      .test('required', 'Value field required', function checkReceiver(value) {
+        const data: string = this.parent.data;
+        const decodedData = decodeURIComponent(data);
 
-          if (isNftOrMultiEsdtTx(decodedData)) {
-            return true;
-          }
-
-          return value != null;
+        if (isNftOrMultiEsdtTx(decodedData)) {
+          return true;
         }
-      )
-      .test('validInteger', t('Value invaild number'), (value) => {
+
+        return value != null;
+      })
+      .test('validInteger', 'Value invaild number', (value) => {
         if (value != null) {
           return stringIsInteger(value);
         }
@@ -95,8 +80,8 @@ export const transactionFields = ({
   };
 };
 
-export const transactionSchema = ({ t, isMainnet }: TransactionFieldsType) => {
-  const txFields = transactionFields({ t, isMainnet });
+export const transactionSchema = ({ isMainnet }: TransactionFieldsType) => {
+  const txFields = transactionFields({ isMainnet });
   return object({
     ...txFields,
     callbackUrl: validUrlSchema.required()
