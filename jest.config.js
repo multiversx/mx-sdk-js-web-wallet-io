@@ -1,28 +1,25 @@
 module.exports = {
   verbose: true,
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
   testTimeout: 10000,
-  moduleDirectories: ['node_modules', 'src'],
-  modulePaths: ['<rootDir>/src'],
-  roots: ['<rootDir>/src'],
+  moduleDirectories: ["node_modules", "src"],
+  modulePaths: ["<rootDir>/src"],
+  roots: ["<rootDir>/src"],
   transform: {
-    '^.+\\.(ts|js|tsx|jsx)$': ['@swc/jest']
+    "^.+\\.(ts|js|tsx|jsx)$": ["@swc/jest"],
   },
-  transformIgnorePatterns: ['node_modules/(^.+\\\\.(ts|js|tsx|jsx)$)'],
-  testMatch: [
-    '**/__tests__/**/*.[jt]s?(x)',
-    '**/?(*.)+(spec|test|bgTest).[jt]s?(x)'
-  ],
+  transformIgnorePatterns: ["node_modules/(^.+\\\\.(ts|js|tsx|jsx)$)"],
+  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
   moduleFileExtensions: [
     // Place tsx and ts to beginning as suggestion from Jest team
     // https://jestjs.io/docs/configuration#modulefileextensions-arraystring
-    'tsx',
-    'ts',
-    'web.js',
-    'js',
-    'web.ts',
-    'web.tsx',
-    'json',
-    'node'
-  ]
+    "tsx",
+    "ts",
+    "web.js",
+    "js",
+    "web.ts",
+    "web.tsx",
+    "json",
+    "node",
+  ],
 };
