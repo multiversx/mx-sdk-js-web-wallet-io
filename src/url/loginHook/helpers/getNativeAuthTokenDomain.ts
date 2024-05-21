@@ -1,11 +1,10 @@
-import { decodeLoginToken } from "helpers";
-
-import { extractDomain } from "./extractDomain";
-import { addHttpsToUrl } from "../../../helpers/navigation/addHttpsToUrl/addHttpsToUrl";
+import { extractDomain } from './extractDomain';
+import { addHttpsToUrl } from 'helpers/navigation/addHttpsToUrl/addHttpsToUrl';
+import { decodeLoginToken } from 'lib';
 
 export const getNativeAuthTokenDomain = ({
   token,
-  fallbackDomain,
+  fallbackDomain
 }: {
   token?: string;
   fallbackDomain: string | null;

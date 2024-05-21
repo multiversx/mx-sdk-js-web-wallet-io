@@ -1,8 +1,8 @@
 import { string } from 'yup';
 import { isFirefox, isSafari } from 'helpers';
-import { decodeAndSanitizeUrl } from './../decodeAndSanitizeUrl';
-import { extractDomain } from './../extractDomain';
-import { getNativeAuthTokenDomain } from './../getNativeAuthTokenDomain';
+import { decodeAndSanitizeUrl } from '../decodeAndSanitizeUrl';
+import { extractDomain } from '../extractDomain';
+import { getNativeAuthTokenDomain } from '../getNativeAuthTokenDomain';
 
 export const getIsValidUrl = ({
   value,
