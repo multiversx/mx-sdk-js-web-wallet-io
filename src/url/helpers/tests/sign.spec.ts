@@ -45,7 +45,6 @@ const signObject = {
 
 describe('signTxSchema', () => {
   const schema = signTxSchema({
-    t: () => null,
     hookWhitelist: [],
     isMainnet: false,
     chainId: 'D'

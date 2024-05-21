@@ -1,6 +1,6 @@
 import { runValidUrlTests } from './runValidUrlTests';
 
-jest.mock('helpers/misc/isSafari', () => ({
+jest.mock('helpers/browser/isSafari', () => ({
   isSafari: () => true
 }));
 

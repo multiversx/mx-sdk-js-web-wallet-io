@@ -1,4 +1,4 @@
-import { parseSignUrl, signBaseSchema, useSignTxSchema } from './sign';
+import { parseSignUrl, signBaseSchema } from './sign';
 
 import { transactionSchema } from './transaction';
 import { validUrlSchema } from './validUrlSchema';
@@ -8,10 +8,4 @@ export * from './login';
 export * from './signMessage';
 export * from './sanitizeSignHookCallbackUrl';
 
-export {
-  validUrlSchema,
-  transactionSchema,
-  useSignTxSchema,
-  signBaseSchema,
-  parseSignUrl
-};
+export { validUrlSchema, transactionSchema, signBaseSchema, parseSignUrl };

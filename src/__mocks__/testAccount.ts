@@ -1,5 +1,5 @@
 export const testAccount = {
-  address: 'erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8a123',
+  address: 'erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex',
   balance: '1698573226897802539008',
   developerReward: '0',
   nonce: 2529,

@@ -1,6 +1,6 @@
 import { runValidUrlTests } from './runValidUrlTests';
 
-jest.mock('helpers/misc/isFirefox', () => ({
+jest.mock('helpers/browser/isFirefox', () => ({
   isFirefox: () => true
 }));
 

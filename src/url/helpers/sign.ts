@@ -2,6 +2,9 @@ import omit from 'lodash/omit';
 import { array, InferType, lazy, mixed, object, string } from 'yup';
 import { transactionFields, TransactionFieldsType } from './transaction';
 import { validUrlSchema } from './validUrlSchema';
+import { isNftOrMultiEsdtTx, parseQueryParams } from 'helpers';
+import { HookSearchParamsEnum } from 'types';
+import { stringIsInteger } from 'lib/sdkDappCore';
 
 const maxTransactions = window.opener ? 50 : 5;
 
@@ -126,16 +129,14 @@ export const signBaseSchema = object({
 }).required();
 
 export const signTxSchema = ({
-  t,
   isMainnet,
   hookWhitelist,
   chainId,
   isSignHook
 }: TransactionFieldsType & {
-  chainId: NetworkType['chainId'];
+  chainId: string;
 }) => {
   const txFields = transactionFields({
-    t,
     isMainnet,
     hookWhitelist,
     isSignHook
@@ -145,13 +146,13 @@ export const signTxSchema = ({
     ...txFields,
     nonce: string()
       .required()
-      .test('validInteger', t('Nonce invaild number'), (value) => {
+      .test('validInteger', 'Nonce invaild number', (value) => {
         if (value != null) {
           return stringIsInteger(value);
         }
         return true;
       }),
-    chainID: string().test('sameAsConfig', t('Invalid Chain Id'), (value) => {
+    chainID: string().test('sameAsConfig', 'Invalid Chain Id', (value) => {
       if (value != null && value !== '') {
         return value === chainId;
       }
@@ -159,20 +160,6 @@ export const signTxSchema = ({
     })
   }).required();
 };
-
-export function useSignTxSchema() {
-  const { t } = useTranslation(['send']);
-
-  const { chainId, hookWhitelist } = useSelector(activeNetworkSelector);
-
-  return signTxSchema({
-    t,
-    isMainnet: getIsMainnet(),
-    chainId,
-    hookWhitelist,
-    isSignHook: true
-  });
-}
 
 type SignBaseHookType = InferType<typeof signBaseSchema>;
 
