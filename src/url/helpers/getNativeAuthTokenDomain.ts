@@ -1,6 +1,6 @@
 import { extractDomain } from './extractDomain';
 import { addHttpsToUrl } from 'helpers/navigation/addHttpsToUrl/addHttpsToUrl';
-import { decodeLoginToken } from 'lib';
+import { decodeLoginToken } from 'lib/sdkDappCore';
 
 export const getNativeAuthTokenDomain = ({
   token,
