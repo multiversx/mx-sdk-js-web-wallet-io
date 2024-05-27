@@ -20,7 +20,7 @@
   "scripts": {
     "compile": "tsc && tsc-alias",
     "publish-yalc": "tsc && tsc-alias && yalc publish",
-    "publish-verdaccio": "npm unpublish --registry http://localhost:4873 @multiversx/sdk-js-web-wallet-io@0.0.0-alpha.1 && rimraf out && yarn compile && npm publish --registry http://localhost:4873",
+    "publish-verdaccio": "rimraf out && yarn compile && npm publish --registry http://localhost:4873",
     "test": "jest",
     "compile-next": "rimraf out && tsc --p tsconfig.next.json && tsc-alias --project tsconfig.next.json"
   },

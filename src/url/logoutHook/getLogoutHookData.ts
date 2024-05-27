@@ -1,31 +1,33 @@
 import { parseQueryParams } from 'helpers/navigation';
 import { sanitizeCallbackUrl } from 'lib/sdkDappCore';
-import { decodeAndSanitizeUrl } from 'url/helpers';
-import { LoginHookType, loginSchema } from 'url/helpers/login';
+import { decodeAndSanitizeUrl, validUrlSchema } from 'url/helpers';
+import { InferType, object, string } from 'yup';
 
-export const getLoginHookData: (search?: string) => {
+const schema = object({
+  callbackUrl: validUrlSchema.required()
+}).required();
+
+export const getLogoutHookData: (search?: string) => {
   hookUrl: string;
   callbackUrl: string;
-  token?: string;
 } | null = (search = window.location.search) => {
   if (!search) {
     return null;
   }
 
-  const hook = parseQueryParams(search) as LoginHookType;
+  const hook = parseQueryParams(search) as InferType<typeof schema>;
 
   try {
-    loginSchema.validateSync(hook, { strict: true });
+    schema.validateSync(hook, { strict: true });
     let callbackUrl = decodeAndSanitizeUrl(hook.callbackUrl);
     callbackUrl = sanitizeCallbackUrl(callbackUrl);
 
     return {
-      ...hook,
       hookUrl: search,
       callbackUrl
     };
   } catch ({ errors }: any) {
-    console.error('login hook format errors: ', errors);
+    console.error('logout hook format errors: ', errors);
   }
 
   return null;
