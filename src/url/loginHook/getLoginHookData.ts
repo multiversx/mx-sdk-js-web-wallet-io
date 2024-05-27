@@ -3,7 +3,7 @@ import { sanitizeCallbackUrl } from 'lib/sdkDappCore';
 import { decodeAndSanitizeUrl } from 'url/helpers';
 import { LoginHookType, loginSchema } from 'url/helpers/login';
 
-export const getLoginHookData = (search: string) => {
+export const getLoginHookData = (search = window.location.search) => {
   if (!search) {
     return null;
   }
