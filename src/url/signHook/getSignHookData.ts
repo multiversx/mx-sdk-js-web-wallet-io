@@ -7,7 +7,8 @@ import { IS_DEVELOPMENT, IS_TEST } from 'constants/index';
 const shouldLogErrors = IS_DEVELOPMENT || IS_TEST;
 
 export const getSignHookData =
-  (schema: ReturnType<typeof signTxSchema>) => (search: string) => {
+  (schema: ReturnType<typeof signTxSchema>) =>
+  (search = window.location.search) => {
     type SignBaseHookType = InferType<typeof signBaseSchema>;
 
     const hook: SignBaseHookType = parseQueryParams(search) as any;
