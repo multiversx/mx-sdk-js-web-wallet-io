@@ -161,8 +161,6 @@ export const signTxSchema = ({
   }).required();
 };
 
-type SignBaseHookType = InferType<typeof signBaseSchema>;
-
 interface ParseSignUrlReturnType<T> {
   callbackUrl: string;
   executeAfterSign?: string;
@@ -170,7 +168,7 @@ interface ParseSignUrlReturnType<T> {
 }
 
 export const parseSignUrl = <T>(search: string): ParseSignUrlReturnType<T> => {
-  const hook = parseQueryParams(search) as SignBaseHookType;
+  const hook = parseQueryParams(search) as InferType<typeof signBaseSchema>;
   const { callbackUrl, executeAfterSign, ...fields } = hook;
 
   const containsArrays = Object.values(fields).some((entry) =>

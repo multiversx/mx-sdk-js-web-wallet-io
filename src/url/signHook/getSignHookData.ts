@@ -3,14 +3,13 @@ import { parseQueryParams } from 'helpers';
 import { parseSignUrl, signBaseSchema, signTxSchema } from 'url/helpers/sign';
 import { sanitizeSignHookCallbackUrl } from 'url/helpers';
 import { IS_DEVELOPMENT, IS_TEST } from 'constants/index';
+import { SignBaseHookType } from 'url/types';
 
 const shouldLogErrors = IS_DEVELOPMENT || IS_TEST;
 
 export const getSignHookData =
   (schema: ReturnType<typeof signTxSchema>) =>
   (search = window.location.search) => {
-    type SignBaseHookType = InferType<typeof signBaseSchema>;
-
     const hook: SignBaseHookType = parseQueryParams(search) as any;
     const signHookData = parseSignUrl(search);
 
