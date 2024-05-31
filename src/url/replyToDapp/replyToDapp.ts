@@ -1,10 +1,11 @@
+import { ReplyWithPostMessageType } from 'lib/sdkDappUtils';
 import { ReplyToDappType } from './replyToDapp.types';
 import { replyWithPostMessage } from './replyWithPostMessage';
 import { replyWithRedirect } from './replyWithRedirect';
 
 export const replyToDapp = (
   props: ReplyToDappType,
-  extensionReplyToDapp?: (props: ReplyToDappType) => void
+  extensionReplyToDapp?: (props: ReplyWithPostMessageType) => void
 ) => {
   const { transactionData, postMessageData, callbackUrl, webwiewApp } = props;
 

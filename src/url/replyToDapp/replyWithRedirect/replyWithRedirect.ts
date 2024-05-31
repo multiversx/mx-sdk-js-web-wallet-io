@@ -3,6 +3,17 @@ import qs from 'qs';
 import { assignWindowLocation } from './assignWindowLocation';
 import { replyQsUrl } from './replyQsUrl';
 import { replyUrl } from './replyUrl';
+import {
+  CrossWindowProviderResponseEnums,
+  ReplyWithPostMessageType
+} from 'lib/sdkDappUtils';
+import { HookResponseStatusEnum } from 'types/hooks.enum';
+import { buildSearchString, objectValuesToString } from 'url/helpers';
+import { sanitizeCallbackUrlSearchParams } from 'url/helpers/sanitizeSignHookCallbackUrl/sanitizeCallbackUrlSearchParams';
+import {
+  WALLET_PROVIDER_CALLBACK_PARAM,
+  WALLET_PROVIDER_CALLBACK_PARAM_TX_SIGNED
+} from 'lib/sdkWebWalletProvider';
 
 export interface ReplyWithRedirectType {
   data?: ReplyWithPostMessageType;

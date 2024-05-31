@@ -1,1 +1,1 @@
-export * from './hookSearchParams.enum';
+export * from './hooks.enum';
