@@ -1,9 +1,9 @@
 import { parseQueryParams } from 'helpers';
-import { sanitizeSignHookCallbackUrl } from 'url/helpers';
+import { sanitizeSignHookCallbackUrl } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeSignHookCallbackUrl';
 import {
   SignMessageHookType,
   signMessageSchema
-} from 'url/helpers/signMessage';
+} from 'hooks/helpers/signMessage';
 
 const IS_DEVELOPMENT =
   process.env.NODE_ENV === 'development' ||

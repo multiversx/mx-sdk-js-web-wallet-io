@@ -1,5 +1,5 @@
 import { buildUrlParams } from 'lib/sdkDappCore';
-import { sanitizeCallbackUrlSearchParams } from 'url/helpers/sanitizeSignHookCallbackUrl/sanitizeCallbackUrlSearchParams';
+import { sanitizeCallbackUrlSearchParams } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeCallbackUrlSearchParams';
 
 interface ReplyUrlType {
   callbackUrl: string;

@@ -8,12 +8,13 @@ import {
   ReplyWithPostMessageType
 } from 'lib/sdkDappUtils';
 import { HookResponseStatusEnum } from 'types/hooks.enum';
-import { buildSearchString, objectValuesToString } from 'url/helpers';
-import { sanitizeCallbackUrlSearchParams } from 'url/helpers/sanitizeSignHookCallbackUrl/sanitizeCallbackUrlSearchParams';
+import { sanitizeCallbackUrlSearchParams } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeCallbackUrlSearchParams';
 import {
   WALLET_PROVIDER_CALLBACK_PARAM,
   WALLET_PROVIDER_CALLBACK_PARAM_TX_SIGNED
 } from 'lib/sdkWebWalletProvider';
+import { objectValuesToString } from 'helpers/operations/objectValuesToString';
+import { buildSearchString } from 'helpers/navigation/buildSearchString';
 
 export interface ReplyWithRedirectType {
   data?: ReplyWithPostMessageType;

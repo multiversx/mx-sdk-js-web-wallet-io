@@ -1,7 +1,7 @@
-import { parseQueryParams } from 'helpers/navigation';
+import { decodeAndSanitizeUrl, parseQueryParams } from 'helpers/navigation';
 import { sanitizeCallbackUrl } from 'lib/sdkDappCore';
-import { decodeAndSanitizeUrl, validUrlSchema } from 'url/helpers';
-import { InferType, object, string } from 'yup';
+import { validUrlSchema } from 'hooks/helpers';
+import { InferType, object } from 'yup';
 
 const schema = object({
   callbackUrl: validUrlSchema.required()

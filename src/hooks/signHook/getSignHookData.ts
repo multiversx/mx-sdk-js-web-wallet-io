@@ -1,9 +1,9 @@
 import { InferType } from 'yup';
 import { parseQueryParams } from 'helpers';
-import { parseSignUrl, signBaseSchema, signTxSchema } from 'url/helpers/sign';
-import { sanitizeSignHookCallbackUrl } from 'url/helpers';
+import { parseSignUrl, signBaseSchema, signTxSchema } from 'hooks/helpers/sign';
 import { IS_DEVELOPMENT, IS_TEST } from 'constants/index';
-import { SignBaseHookType } from 'url/types';
+import { SignBaseHookType } from 'hooks/types';
+import { sanitizeSignHookCallbackUrl } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeSignHookCallbackUrl';
 
 const shouldLogErrors = IS_DEVELOPMENT || IS_TEST;
 

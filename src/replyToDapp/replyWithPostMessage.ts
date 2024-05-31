@@ -1,9 +1,9 @@
+import { processBase64Fields } from 'helpers/operations/processBase64Fields';
 import {
   CrossWindowProviderResponseEnums,
   ReplyWithPostMessageType
 } from 'lib/sdkDappUtils';
 import isUndefined from 'lodash/isUndefined';
-import { processBase64Fields } from 'url/helpers/processBase64Fields';
 
 interface BaseType {
   postMessageData: ReplyWithPostMessageType;
