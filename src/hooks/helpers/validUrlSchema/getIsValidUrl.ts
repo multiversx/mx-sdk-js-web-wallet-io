@@ -1,6 +1,6 @@
 import { string } from 'yup';
 import { isFirefox, isSafari } from 'helpers';
-import { decodeAndSanitizeUrl } from '../../../helpers/navigation/decodeAndSanitizeUrl';
+import { decodeAndSanitizeUrl } from 'helpers/navigation/decodeAndSanitizeUrl';
 import { extractDomain } from '../extractDomain';
 import { getNativeAuthTokenDomain } from '../getNativeAuthTokenDomain';
 

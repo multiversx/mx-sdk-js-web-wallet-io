@@ -1,4 +1,4 @@
-import { extractDomain } from '../../helpers/extractDomain';
+import { extractDomain } from 'hooks/helpers/extractDomain';
 
 export function isDomainValid(url = '', allowedDomains: string[]) {
   try {
