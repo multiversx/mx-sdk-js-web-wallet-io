@@ -2,11 +2,11 @@ import { decodeAndSanitizeUrl, parseQueryParams } from 'helpers/navigation';
 import { sanitizeCallbackUrl } from 'lib/sdkDappCore';
 import { LoginHookType, loginSchema } from 'hooks/helpers/login';
 
-export const getLoginHookData: (search?: string) => {
+export const getLoginHookData: (search: string) => {
   hookUrl: string;
   callbackUrl: string;
   token?: string;
-} | null = (search = window.location.search) => {
+} | null = (search) => {
   if (!search) {
     return null;
   }

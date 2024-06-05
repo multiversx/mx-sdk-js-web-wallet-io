@@ -8,8 +8,7 @@ import { sanitizeSignHookCallbackUrl } from 'hooks/helpers/sanitizeSignHookCallb
 const shouldLogErrors = IS_DEVELOPMENT || IS_TEST;
 
 export const getSignHookData =
-  (schema: ReturnType<typeof signTxSchema>) =>
-  (search = window.location.search) => {
+  (schema: ReturnType<typeof signTxSchema>) => (search: string) => {
     const hook: SignBaseHookType = parseQueryParams(search) as any;
     const signHookData = parseSignUrl(search);
 
