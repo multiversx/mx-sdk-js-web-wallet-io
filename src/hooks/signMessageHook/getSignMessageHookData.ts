@@ -1,3 +1,4 @@
+import { IS_DEVELOPMENT } from 'constants/index';
 import { parseQueryParams } from 'helpers';
 import { sanitizeSignHookCallbackUrl } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeSignHookCallbackUrl';
 import {
@@ -5,14 +6,10 @@ import {
   signMessageSchema
 } from 'hooks/helpers/signMessage';
 
-const IS_DEVELOPMENT =
-  process.env.NODE_ENV === 'development' ||
-  window.location.hostname === 'localhost';
-
-export const getSignMessageHookData: (search?: string) => {
+export const getSignMessageHookData: (search: string) => {
   hookUrl: string;
   callbackUrl: string;
-} | null = (search = window.location.search) => {
+} | null = (search) => {
   const hook = parseQueryParams(search) as SignMessageHookType;
 
   let isValid = false;
