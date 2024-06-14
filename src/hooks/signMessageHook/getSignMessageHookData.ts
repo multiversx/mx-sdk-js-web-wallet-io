@@ -1,5 +1,5 @@
 import { IS_DEVELOPMENT } from 'constants/index';
-import { parseQueryParams } from 'helpers';
+import { parseQueryParams } from 'helpers/navigation/parseQueryParams';
 import { sanitizeSignHookCallbackUrl } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeSignHookCallbackUrl';
 import {
   SignMessageHookType,
