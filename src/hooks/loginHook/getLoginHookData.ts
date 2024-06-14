@@ -1,6 +1,7 @@
-import { decodeAndSanitizeUrl, parseQueryParams } from 'helpers/navigation';
 import { sanitizeCallbackUrl } from 'lib/sdkDappCore';
 import { LoginHookType, loginSchema } from 'hooks/helpers/login';
+import { parseQueryParams } from 'helpers/navigation/parseQueryParams';
+import { decodeAndSanitizeUrl } from 'helpers/navigation/decodeAndSanitizeUrl';
 
 export const getLoginHookData: (search: string) => {
   hookUrl: string;
