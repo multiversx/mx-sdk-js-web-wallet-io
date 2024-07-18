@@ -28,7 +28,11 @@ describe('ParseQueryParams tests', () => {
         value: '2'
       },
     '?<body onload=alert(‘something’)>;': {},
-    '?param=derp"+%2B+alert("xss")+%2b+"': {}
+    '?param=derp"+%2B+alert("xss")+%2b+"': {},
+    '?message=Hello!&callbackUrl=https%3A%2F%2Fdevnet.template-dapp.multiversx.com%2Fdashboard%3FsessionId%3D1721325208630%23sign-message': {
+      callbackUrl: 'https://devnet.template-dapp.multiversx.com/dashboard?sessionId=1721325208630#sign-message',
+      message: 'Hello!'
+    },
   };
   for (let i = 0; i < Object.keys(searchStrings).length; i++) {
     const input = Object.keys(searchStrings)[i];
