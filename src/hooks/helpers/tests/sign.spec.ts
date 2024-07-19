@@ -229,4 +229,52 @@ describe('parseSignUrl', () => {
       ]
     });
   });
+
+  test('parseSignUrl correctly extracts the transactions', async () => {
+    const search =
+      '?nonce%5B0%5D=45&nonce%5B1%5D=46&value%5B0%5D=100000000000000000&value%5B1%5D=0&receiver%5B0%5D=erd1qqqqqqqqqqqqqpgqfj3z3k4vlq7dc2928rxez0uhhlq46s6p4mtqerlxhc&receiver%5B1%5D=erd1qqqqqqqqqqqqqpgqq67uv84ma3cekpa55l4l68ajzhq8qm3u0n4s20ecvx&sender%5B0%5D=erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex&sender%5B1%5D=erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex&gasPrice%5B0%5D=1000000000&gasPrice%5B1%5D=1000000000&gasLimit%5B0%5D=4200000&gasLimit%5B1%5D=25500000&data%5B0%5D=wrapEgld&data%5B1%5D=ESDTTransfer%405745474c442d643763366262%40016345785d8a0000%4073776170546f6b656e734669786564496e707574%40555344432d386434303638%40227162&chainID%5B0%5D=D&chainID%5B1%5D=D&version%5B0%5D=2&version%5B1%5D=2&options%5B0%5D=3&options%5B1%5D=3&guardian%5B0%5D=erd1jc3k6rftrdm5cxxxf8yscmyajgc2uszwg9nvx3gg0c74q6scgmzsmjpwrc&guardian%5B1%5D=erd1jc3k6rftrdm5cxxxf8yscmyajgc2uszwg9nvx3gg0c74q6scgmzsmjpwrc&signature%5B0%5D=e5ac677d25682785a8f630064dc9e69dad9f41a8967cbe23cbbf8b85012276fb539e43d4a2b19dbd4059344c7648493d285e74ef83392d7f0d0dc86873fce902&signature%5B1%5D=4aed8c6266d1a904838464c60c26c74dc622ae4a961b2ea2e67c71919f1f42763624e923eeb43c35e6b2214d3a9263c27ad83e323d0c988f980aac410c9fee00';
+    const callbackUrl = `&callbackUrl=${MAIN_REFERRER}`;
+    const result = parseSignUrl(search + callbackUrl);
+    expect(result).toMatchObject({
+      callbackUrl: `${MAIN_REFERRER}`,
+      txs: [
+        {
+          chainID: 'D',
+          data: 'wrapEgld',
+          gasLimit: '4200000',
+          gasPrice: '1000000000',
+          guardian:
+            'erd1jc3k6rftrdm5cxxxf8yscmyajgc2uszwg9nvx3gg0c74q6scgmzsmjpwrc',
+          nonce: '45',
+          options: '3',
+          receiver:
+            'erd1qqqqqqqqqqqqqpgqfj3z3k4vlq7dc2928rxez0uhhlq46s6p4mtqerlxhc',
+          sender:
+            'erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex',
+          signature:
+            'e5ac677d25682785a8f630064dc9e69dad9f41a8967cbe23cbbf8b85012276fb539e43d4a2b19dbd4059344c7648493d285e74ef83392d7f0d0dc86873fce902',
+          value: '100000000000000000',
+          version: '2'
+        },
+        {
+          chainID: 'D',
+          data: 'ESDTTransfer@5745474c442d643763366262@016345785d8a0000@73776170546f6b656e734669786564496e707574@555344432d386434303638@227162',
+          gasLimit: '25500000',
+          gasPrice: '1000000000',
+          guardian:
+            'erd1jc3k6rftrdm5cxxxf8yscmyajgc2uszwg9nvx3gg0c74q6scgmzsmjpwrc',
+          nonce: '46',
+          options: '3',
+          receiver:
+            'erd1qqqqqqqqqqqqqpgqq67uv84ma3cekpa55l4l68ajzhq8qm3u0n4s20ecvx',
+          sender:
+            'erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex',
+          signature:
+            '4aed8c6266d1a904838464c60c26c74dc622ae4a961b2ea2e67c71919f1f42763624e923eeb43c35e6b2214d3a9263c27ad83e323d0c988f980aac410c9fee00',
+          value: '0',
+          version: '2'
+        }
+      ]
+    });
+  });
 });
