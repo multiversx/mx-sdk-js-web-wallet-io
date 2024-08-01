@@ -5,9 +5,16 @@ export const parseQueryParams = (query: string) => {
     return {};
   }
 
-  if (query && /^\?[A-Za-z0-9\/&@:.%?#\-\[\]_=]+$/.test(query)) {
-    return qs.parse(query?.split('?')[1]);
+  // Prevent inserting JavaScript code in URL
+  if (/[<>()]/.test(query)) {
+    return {};
   }
 
-  return {};
+  try {
+    new URL(query, window.location.origin);
+    return qs.parse(query?.split('?')[1]);
+  } catch (error) {
+    console.error('Error parsing query parameters:', error);
+    return {};
+  }
 };
