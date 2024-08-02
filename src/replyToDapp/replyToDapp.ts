@@ -2,6 +2,7 @@ import { ReplyWithPostMessageType } from 'lib/sdkDappUtils';
 import { ReplyToDappType } from './replyToDapp.types';
 import { replyWithPostMessage } from './replyWithPostMessage';
 import { replyWithRedirect } from './replyWithRedirect';
+import { isInIframe } from '../helpers/browser/isInIFrame';
 
 export const replyToDapp = (
   props: ReplyToDappType,
