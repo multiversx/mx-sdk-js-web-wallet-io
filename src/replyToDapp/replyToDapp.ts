@@ -17,7 +17,7 @@ export const replyToDapp = (
     });
   }
 
-  if (window.opener || window.parent) {
+  if (window.opener || isInIframe()) {
     return replyWithPostMessage({
       postMessageData,
       target: window.opener ?? window.parent,
