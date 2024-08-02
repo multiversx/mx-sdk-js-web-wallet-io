@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- [Fix replyToDapp in the context of iframe provider](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/12)
+
 ## [[0.2.0](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/11)] - 2024-08-02
 - [Add IframeProvider support](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/10)
 
