@@ -1,6 +1,6 @@
 {
   "name": "@multiversx/sdk-js-web-wallet-io",
-  "version": "0.2.1-alpha.1",
+  "version": "0.2.1",
   "private": false,
   "main": "out/index.js",
   "types": "out/index.d.ts",
