@@ -4,9 +4,13 @@ import { transactionFields, TransactionFieldsType } from './transaction';
 import { validUrlSchema } from './validUrlSchema';
 import { isNftOrMultiEsdtTx, parseQueryParams } from 'helpers';
 import { HookSearchParamsEnum } from 'types';
-import { stringIsInteger } from 'lib/sdkDappCore';
+import { safeWindow, stringIsInteger } from 'lib/sdkDappCore';
 
-const maxTransactions = window.opener ? 50 : 5;
+const isExtension = ['moz-extension:', 'chrome-extension:'].includes(
+  safeWindow?.location?.protocol
+);
+
+const maxTransactions = safeWindow?.opener || isExtension ? 50 : 5;
 
 const validString = mixed().test(
   'string',
