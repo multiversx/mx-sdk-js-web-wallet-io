@@ -1,3 +1,5 @@
+import { safeWindow } from 'lib/sdkDappCore';
+
 export const assignWindowLocation = (url: string) => {
-  window.location.assign(url);
+  safeWindow?.location?.assign(url);
 };
