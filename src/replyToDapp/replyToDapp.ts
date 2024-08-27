@@ -2,6 +2,8 @@ import { ReplyWithPostMessageType } from 'lib/sdkDappUtils';
 import { ReplyToDappType } from './replyToDapp.types';
 import { replyWithPostMessage } from './replyWithPostMessage';
 import { replyWithRedirect } from './replyWithRedirect';
+import { isInIframe } from '../helpers/browser/isInIFrame';
+import { safeWindow } from 'lib/sdkDappCore';
 
 export const replyToDapp = (
   props: ReplyToDappType,
@@ -17,10 +19,10 @@ export const replyToDapp = (
     });
   }
 
-  if (window.opener) {
+  if (safeWindow?.opener || isInIframe()) {
     return replyWithPostMessage({
       postMessageData,
-      target: window.opener,
+      target: safeWindow?.opener ?? safeWindow?.parent,
       callbackUrl
     });
   }

@@ -1,3 +1,4 @@
+export { safeWindow } from '@multiversx/sdk-dapp-core/out/constants/window';
 export { decodeLoginToken } from '@multiversx/sdk-dapp-core/out/services/nativeAuth/helpers/decodeLoginToken';
 export { decodeNativeAuthToken } from '@multiversx/sdk-dapp-core/out/services/nativeAuth/helpers/decodeNativeAuthToken';
 export { stringIsFloat } from '@multiversx/sdk-dapp-core/out/utils/validation/stringIsFloat';
