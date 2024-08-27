@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[0.2.3](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/19)] - 2024-08-27
+- [Upgrade sdk-dapp-core and cross-window-provider](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/18)
+
 ## [[0.2.2](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/16)] - 2024-08-09
 - [Update `isInIframe` window condition](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/15)
 - [Fix extension max number of transacitons and replace `window` with `safeWindow`](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/14)

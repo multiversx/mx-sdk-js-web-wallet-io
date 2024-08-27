@@ -1,6 +1,6 @@
 {
   "name": "@multiversx/sdk-js-web-wallet-io",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": false,
   "main": "out/index.js",
   "types": "out/index.d.ts",
@@ -27,10 +27,10 @@
   },
   "peerDependencies": {
     "@multiversx/sdk-core": ">13.0.0",
-    "@multiversx/sdk-dapp-core": "0.0.0-alpha.6",
+    "@multiversx/sdk-dapp-core": "0.0.0-alpha.8",
     "@multiversx/sdk-dapp-utils": "0.0.1",
     "axios": ">=1.6.5",
-    "@multiversx/sdk-web-wallet-cross-window-provider": ">=0.2.0",
+    "@multiversx/sdk-web-wallet-cross-window-provider": ">=0.4.2",
     "bignumber.js": ">=9.0.2"
   },
   "dependencies": {
@@ -41,8 +41,8 @@
   },
   "devDependencies": {
     "@multiversx/sdk-core": ">13.0.0",
-    "@multiversx/sdk-web-wallet-cross-window-provider": "0.2.0",
-    "@multiversx/sdk-dapp-core": "0.0.0-alpha.6",
+    "@multiversx/sdk-web-wallet-cross-window-provider": "0.4.2",
+    "@multiversx/sdk-dapp-core": "0.0.0-alpha.8",
     "@multiversx/sdk-dapp-utils": "0.0.1",
     "@swc/core": "1.5.7",
     "@swc/jest": "0.2.36",
