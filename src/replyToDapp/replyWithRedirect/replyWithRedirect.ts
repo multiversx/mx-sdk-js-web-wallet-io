@@ -4,7 +4,7 @@ import { assignWindowLocation } from './assignWindowLocation';
 import { replyQsUrl } from './replyQsUrl';
 import { replyUrl } from './replyUrl';
 import {
-  CrossWindowProviderResponseEnums,
+  WindowProviderResponseEnums,
   ReplyWithPostMessageType
 } from 'lib/sdkDappUtils';
 import { HookResponseStatusEnum } from 'types/hooks.enum';
@@ -37,7 +37,7 @@ export const replyWithRedirect = ({
 
   // URL reply
   switch (type) {
-    case CrossWindowProviderResponseEnums.loginResponse: {
+    case WindowProviderResponseEnums.loginResponse: {
       if (payload?.error || !payload?.data) {
         return;
       }
@@ -54,12 +54,12 @@ export const replyWithRedirect = ({
       url = replyUrl({ callbackUrl, urlParams });
       break;
     }
-    case CrossWindowProviderResponseEnums.disconnectResponse: {
+    case WindowProviderResponseEnums.disconnectResponse: {
       url = callbackUrl;
       break;
     }
 
-    case CrossWindowProviderResponseEnums.cancelResponse: {
+    case WindowProviderResponseEnums.cancelResponse: {
       const urlParams = {
         address: payload?.data?.address ?? '',
         status: HookResponseStatusEnum.cancelled
@@ -67,7 +67,7 @@ export const replyWithRedirect = ({
       url = replyUrl({ callbackUrl, urlParams });
       break;
     }
-    case CrossWindowProviderResponseEnums.signTransactionsResponse: {
+    case WindowProviderResponseEnums.signTransactionsResponse: {
       if (!payload?.data) {
         console.error('Unable to sign transactions: ', payload?.error);
         break;
@@ -87,7 +87,7 @@ export const replyWithRedirect = ({
       url = sanitizeCallbackUrlSearchParams(qsUrl);
       break;
     }
-    case CrossWindowProviderResponseEnums.signMessageResponse: {
+    case WindowProviderResponseEnums.signMessageResponse: {
       if (!payload?.data) {
         console.error('Unable to sign message: ', payload?.error);
         break;
