@@ -10,7 +10,7 @@ const isExtension = ['moz-extension:', 'chrome-extension:'].includes(
   safeWindow?.location?.protocol ?? ""
 );
 
-const maxTransactions = safeWindow?.opener || isExtension ? 50 : 5;
+const maxTransactions = 50;
 
 const validString = mixed().test(
   'string',
