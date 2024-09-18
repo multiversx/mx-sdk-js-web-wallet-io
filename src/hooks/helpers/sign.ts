@@ -93,7 +93,7 @@ export const signBaseSchema = object({
       'sameNumberOfValues',
       'All transactions must have equal array values',
       function () {
-        const fields = omit(this.parent, ['modal', 'callbackUrl']);
+        const fields = omit(this.parent, ['modal', 'callbackUrl', 'data']);
 
         const allValues = Object.values(fields);
         const allArrays = allValues.every((value) => Array.isArray(value));
