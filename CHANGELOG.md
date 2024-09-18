@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[1.0.2](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/24)] - 2024-09-18
+- [Added optional data field in multiple sign transactions validation schema](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/23)
+
+## [[1.0.1](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/22)] - 2024-09-17
+- [Changed max transactions to 50 by default](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/22)
+
 ## [[1.0.0](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/21)] - 2024-08-29
 - [Upgrade sdk-dapp-utils, sdk-dapp-core and cross-window-provider - breaking changes](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/20)
 
