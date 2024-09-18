@@ -1,6 +1,6 @@
 import { processBase64Fields } from 'helpers/operations/processBase64Fields';
 import {
-  CrossWindowProviderResponseEnums,
+  WindowProviderResponseEnums,
   ReplyWithPostMessageType
 } from 'lib/sdkDappUtils';
 import isUndefined from 'lodash/isUndefined';
@@ -31,7 +31,7 @@ export const replyWithPostMessage = ({
     return;
   }
   const data =
-    props.type === CrossWindowProviderResponseEnums.signTransactionsResponse
+    props.type === WindowProviderResponseEnums.signTransactionsResponse
       ? props.payload.data.map((tx) => processBase64Fields(tx).encode())
       : props.payload.data;
 
@@ -58,9 +58,9 @@ export const replyWithPostMessage = ({
   }
 
   const allowedResponses = [
-    CrossWindowProviderResponseEnums.handshakeResponse,
-    CrossWindowProviderResponseEnums.cancelResponse,
-    CrossWindowProviderResponseEnums.disconnectResponse
+    WindowProviderResponseEnums.handshakeResponse,
+    WindowProviderResponseEnums.cancelResponse,
+    WindowProviderResponseEnums.disconnectResponse
   ];
 
   const origin = allowedResponses.includes(props.type)

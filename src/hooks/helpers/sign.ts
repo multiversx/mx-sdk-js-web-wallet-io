@@ -7,7 +7,7 @@ import { HookSearchParamsEnum } from 'types';
 import { safeWindow, stringIsInteger } from 'lib/sdkDappCore';
 
 const isExtension = ['moz-extension:', 'chrome-extension:'].includes(
-  safeWindow?.location?.protocol
+  safeWindow?.location?.protocol ?? ""
 );
 
 const maxTransactions = safeWindow?.opener || isExtension ? 50 : 5;
