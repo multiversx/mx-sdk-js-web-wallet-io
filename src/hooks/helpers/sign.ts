@@ -4,11 +4,7 @@ import { transactionFields, TransactionFieldsType } from './transaction';
 import { validUrlSchema } from './validUrlSchema';
 import { isNftOrMultiEsdtTx, parseQueryParams } from 'helpers';
 import { HookSearchParamsEnum } from 'types';
-import { safeWindow, stringIsInteger } from 'lib/sdkDappCore';
-
-const isExtension = ['moz-extension:', 'chrome-extension:'].includes(
-  safeWindow?.location?.protocol ?? ""
-);
+import { stringIsInteger } from 'lib/sdkDappCore';
 
 const maxTransactions = 50;
 
