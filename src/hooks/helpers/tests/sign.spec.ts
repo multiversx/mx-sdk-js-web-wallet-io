@@ -84,10 +84,10 @@ describe('signBaseSchema', () => {
   test('signBaseSchema one argument missing', async () => {
     const isValid = await signBaseSchema.isValid({
       ...signObject,
-      data: [
-        '56e185709@b0da888e3e85be2a5b0d4@1198a68cecc2dab85a259bbfadb@a14275d',
-        '56e185709@b0da888e3e85be2a5b0d4@1198a68cecc2dab85a259bbfadb@a14275d'
-        // '56e185709@b0da888e3e85be2a5b0d4@1198a68cecc2dab85a259bbfadb@a14275d',
+      value: [
+        '0',
+        '0'
+        // '0',
       ]
     });
 
@@ -97,12 +97,7 @@ describe('signBaseSchema', () => {
   test('signBaseSchema invalid extra argument', async () => {
     const isValid = await signBaseSchema.isValid({
       ...signObject,
-      data: [
-        '56e185709@b0da888e3e85be2a5b0d4@1198a68cecc2dab85a259bbfadb@a14275d',
-        '56e185709@b0da888e3e85be2a5b0d4@1198a68cecc2dab85a259bbfadb@a14275d',
-        '56e185709@b0da888e3e85be2a5b0d4@1198a68cecc2dab85a259bbfadb@a14275d',
-        '56e185709@b0da888e3e85be2a5b0d4@1198a68cecc2dab85a259bbfadb@a14275d'
-      ]
+      vlaue: ['0', '0', '0', '0']
     });
     expect(isValid).toBe(false);
   });

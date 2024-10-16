@@ -26,11 +26,10 @@
     "compile-next": "rimraf out && tsc --p tsconfig.next.json && tsc-alias --project tsconfig.next.json"
   },
   "peerDependencies": {
-    "@multiversx/sdk-core": ">13.0.0",
+    "@multiversx/sdk-core": ">=13.5.0",
     "@multiversx/sdk-dapp-core": "0.0.0-alpha.9",
-    "@multiversx/sdk-dapp-utils": "0.1.0",
-    "@multiversx/sdk-web-wallet-cross-window-provider": "1.0.0",
-    "axios": ">=1.6.5",
+    "@multiversx/sdk-web-wallet-cross-window-provider": ">=2.0.1",
+    "axios": ">=1.7.4",
     "bignumber.js": ">=9.0.2"
   },
   "dependencies": {
@@ -40,17 +39,18 @@
     "yup": "0.32.11"
   },
   "devDependencies": {
-    "@multiversx/sdk-core": ">13.0.0",
-    "@multiversx/sdk-web-wallet-cross-window-provider": "1.0.0",
+    "@multiversx/sdk-core": ">=13.5.0",
     "@multiversx/sdk-dapp-core": "0.0.0-alpha.9",
-    "@multiversx/sdk-dapp-utils": "0.1.0",
+    "@multiversx/sdk-web-wallet-cross-window-provider": ">=2.0.1",
     "@swc/core": "1.5.7",
     "@swc/jest": "0.2.36",
+    "@types/jest": "29.5.13",
     "@types/lodash": "4.17.4",
     "@types/node": "20.12.8",
+    "@types/qs": "6.9.16",
     "@typescript-eslint/eslint-plugin": "7.8.0",
     "@typescript-eslint/parser": "7.8.0",
-    "axios": "1.6.5",
+    "axios": ">=1.7.4",
     "bignumber.js": ">=9.0.2",
     "eslint": "9.1.1",
     "eslint-config-prettier": "9.1.0",
