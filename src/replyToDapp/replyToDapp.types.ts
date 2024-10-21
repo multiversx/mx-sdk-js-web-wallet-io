@@ -1,4 +1,4 @@
-import { ReplyWithPostMessageType } from 'lib/sdkDappUtils';
+import { ReplyWithPostMessageType } from 'lib/sdkDappCrossWindowProvider';
 import { ReplyWithRedirectType } from './replyWithRedirect';
 
 export interface ReplyToDappType {

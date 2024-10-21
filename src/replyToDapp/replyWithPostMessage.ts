@@ -2,7 +2,7 @@ import { processBase64Fields } from 'helpers/operations/processBase64Fields';
 import {
   WindowProviderResponseEnums,
   ReplyWithPostMessageType
-} from 'lib/sdkDappUtils';
+} from 'lib/sdkDappCrossWindowProvider';
 import isUndefined from 'lodash/isUndefined';
 
 interface BaseType {

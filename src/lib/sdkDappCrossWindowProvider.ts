@@ -2,10 +2,10 @@ export {
   WindowProviderRequestEnums,
   WindowProviderResponseEnums,
   SignMessageStatusEnum
-} from '@multiversx/sdk-dapp-utils/out/enums';
+} from '@multiversx/sdk-web-wallet-cross-window-provider/out/enums';
 export type {
   ReplyWithPostMessageType,
   ResponseTypeMap,
   ReplyWithPostMessageObjectType,
   RequestMessageType
-} from '@multiversx/sdk-dapp-utils/out/types';
+} from '@multiversx/sdk-web-wallet-cross-window-provider/out/types';
