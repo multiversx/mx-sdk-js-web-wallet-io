@@ -844,10 +844,10 @@
     keccak "3.0.2"
     protobufjs "7.2.4"
 
-"@multiversx/sdk-core@>13.5.0":
-  version "13.9.0"
-  resolved "https://registry.yarnpkg.com/@multiversx/sdk-core/-/sdk-core-13.9.0.tgz#9a4cce2d355d376917fa78d05a515ee0bd8f3e96"
-  integrity sha512-WYA5fssMt/jTRTT+dkZW6V0ykCrkczhJ3BbZni6LhHjwFti7lMboVdoUMCIyPbecWZIEdmLq0OTcjOLy9tZX0g==
+"@multiversx/sdk-core@>=13.5.0":
+  version "13.11.0"
+  resolved "https://registry.yarnpkg.com/@multiversx/sdk-core/-/sdk-core-13.11.0.tgz#673153475a34ca6bb761becc4b036f9a701d266a"
+  integrity sha512-/ds0V/pwnppqPyl7HmIGIp4BdIKExDecvncRLvWd+xYaxXOLJ1R4opSXPAV1fpneoeX3lg8903mw2x5dBrHJ+A==
   dependencies:
     "@multiversx/sdk-transaction-decoder" "1.0.2"
     bech32 "1.1.4"
