@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[1.1.0](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/27)] - 2024-10-21
+- [Upgrade packages](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/26)
 - [Updated workflow runner to self-hosted](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/25)
 
 ## [[1.0.2](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/24)] - 2024-09-18

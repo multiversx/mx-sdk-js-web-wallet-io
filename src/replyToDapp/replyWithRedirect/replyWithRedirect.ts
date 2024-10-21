@@ -6,7 +6,7 @@ import { replyUrl } from './replyUrl';
 import {
   WindowProviderResponseEnums,
   ReplyWithPostMessageType
-} from 'lib/sdkDappUtils';
+} from 'lib/sdkDappCrossWindowProvider';
 import { HookResponseStatusEnum } from 'types/hooks.enum';
 import { sanitizeCallbackUrlSearchParams } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeCallbackUrlSearchParams';
 import {
