@@ -5,8 +5,7 @@ import { validUrlSchema } from './validUrlSchema';
 import { isNftOrMultiEsdtTx, parseQueryParams } from 'helpers';
 import { HookSearchParamsEnum } from 'types';
 import { stringIsInteger } from 'lib/sdkDappCore';
-
-const maxTransactions = 50;
+import { MAX_TRANSACTIONS } from 'constants/index';
 
 const validString = mixed().test(
   'string',
@@ -18,7 +17,7 @@ const validArray = array()
   .of(string())
   .required()
   .min(1, 'At least one value')
-  .max(maxTransactions, `Maximum ${maxTransactions} values`);
+  .max(MAX_TRANSACTIONS, `Maximum ${MAX_TRANSACTIONS} values`);
 
 export const arrayOrString = lazy((value) =>
   typeof value === 'string' ? validString : validArray
