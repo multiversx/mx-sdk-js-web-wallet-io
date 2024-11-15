@@ -3,6 +3,7 @@ import { isFirefox, isSafari } from 'helpers';
 import { decodeAndSanitizeUrl } from 'helpers/navigation/decodeAndSanitizeUrl';
 import { extractDomain } from '../extractDomain';
 import { getNativeAuthTokenDomain } from '../getNativeAuthTokenDomain';
+import { getDomain } from '../getDomain';
 
 export const getIsValidUrl = ({
   value,
@@ -25,20 +26,16 @@ export const getIsValidUrl = ({
   }
 
   const { domain: urlDomain } = extractDomain(url);
-  let comparedDomain = isFirefox() || isSafari() ? urlDomain : '';
+  const domain = getDomain(urlDomain);
 
-  if (document.referrer) {
-    comparedDomain = extractDomain(document.referrer).domain;
-  }
-
-  // use nativeAuthOrigin if defined. If not, fallback on comparedDomain
+  // use nativeAuthOrigin if defined. If not, fallback on domain
   const nativeAuthTokenDomain = getNativeAuthTokenDomain({
     token,
-    fallbackDomain: comparedDomain
+    fallbackDomain: domain
   });
 
   const sameDomainAsReferrer =
-    comparedDomain === urlDomain && comparedDomain === nativeAuthTokenDomain;
+    domain === urlDomain && domain === nativeAuthTokenDomain;
 
   const isTestEnvironment = urlDomain?.endsWith('.localhost');
 
