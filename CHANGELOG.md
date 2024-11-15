@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[1.1.3](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/34)] - 2024-11-15
+- [Added custom domain functionality](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/33)
+
 ## [[1.1.2](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/32)] - 2024-10-28
 - [Fixed parsing more than 20 transactions](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/31)
 
