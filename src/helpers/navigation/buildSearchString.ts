@@ -1,4 +1,4 @@
-import { IPlainTransactionObject } from '@multiversx/sdk-core/out';
+import { IPlainTransactionObject } from '@multiversx/sdk-core';
 
 export const buildSearchString = (
   plainTransactions:
