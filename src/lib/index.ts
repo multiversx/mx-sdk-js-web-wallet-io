@@ -1,3 +1,3 @@
-export * from './sdkDappCore';
+export * from './sdkDapp';
 export * from './sdkDappCrossWindowProvider';
 export * from './sdkWebWalletProvider';
