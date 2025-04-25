@@ -1,11 +1,10 @@
+export { buildUrlParams } from '@multiversx/sdk-dapp/utils/buildUrlParams';
 export {
-  isContract,
-  buildUrlParams,
   isStringBase64,
   decodeBase64,
   encodeToBase64
-} from '@multiversx/sdk-dapp/utils';
-
+} from '@multiversx/sdk-dapp/utils/decoders';
+export { isContract } from '@multiversx/sdk-dapp/utils/smartContracts';
 export {
   decodeLoginToken,
   decodeNativeAuthToken
