@@ -4,7 +4,7 @@ import { transactionFields, TransactionFieldsType } from './transaction';
 import { validUrlSchema } from './validUrlSchema';
 import { isNftOrMultiEsdtTx, parseQueryParams } from 'helpers';
 import { HookSearchParamsEnum } from 'types';
-import { stringIsInteger } from 'lib/sdkDappCore';
+import { stringIsInteger } from 'lib/sdkDapp';
 import { MAX_TRANSACTIONS } from 'constants/index';
 
 const validString = mixed().test(
