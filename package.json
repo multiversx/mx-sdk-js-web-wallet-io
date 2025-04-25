@@ -27,7 +27,7 @@
   },
   "peerDependencies": {
     "@multiversx/sdk-core": "^14.x",
-    "@multiversx/sdk-dapp-core": "0.0.0-alpha.19",
+    "@multiversx/sdk-dapp": "4.1.2",
     "@multiversx/sdk-dapp-utils": "2.0.0",
     "@multiversx/sdk-web-wallet-cross-window-provider": "^3.x",
     "axios": ">=1.7.4",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@multiversx/sdk-core": "^14.x",
-    "@multiversx/sdk-dapp-core": "0.0.0-alpha.19",
+    "@multiversx/sdk-dapp": "4.1.2",
     "@multiversx/sdk-dapp-utils": "2.0.0",
     "@multiversx/sdk-web-wallet-cross-window-provider": "^3.x",
     "@swc/core": "1.5.7",

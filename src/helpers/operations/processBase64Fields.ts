@@ -1,5 +1,5 @@
 import { IPlainTransactionObject } from '@multiversx/sdk-core';
-import { decodeBase64, encodeToBase64, isStringBase64 } from 'lib/sdkDappCore';
+import { decodeBase64, encodeToBase64, isStringBase64 } from 'lib/sdkDapp';
 
 const modifyTransaction = (
   transaction: IPlainTransactionObject,
