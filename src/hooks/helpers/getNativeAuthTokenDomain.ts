@@ -1,7 +1,7 @@
 import isString from 'lodash/isString';
 import { extractDomain } from './extractDomain';
 import { addHttpsToUrl } from 'helpers/navigation/addHttpsToUrl/addHttpsToUrl';
-import { decodeLoginToken } from 'lib/sdkDapp';
+import { decodeLoginToken } from 'lib/sdkDappCore';
 
 export const getNativeAuthTokenDomain = ({
   token,

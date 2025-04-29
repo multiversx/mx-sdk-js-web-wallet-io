@@ -3,7 +3,7 @@ import { ReplyToDappType } from './replyToDapp.types';
 import { replyWithPostMessage } from './replyWithPostMessage';
 import { replyWithRedirect } from './replyWithRedirect';
 import { isInIframe } from '../helpers/browser/isInIFrame';
-import { safeWindow } from 'lib/sdkDapp';
+import { safeWindow } from 'lib/sdkDappCore';
 
 export const replyToDapp = (
   props: ReplyToDappType,

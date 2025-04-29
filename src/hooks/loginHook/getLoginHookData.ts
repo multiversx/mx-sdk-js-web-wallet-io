@@ -1,4 +1,4 @@
-import { sanitizeCallbackUrl } from 'lib/sdkDapp';
+import { sanitizeCallbackUrl } from 'lib/sdkDappCore';
 import { LoginHookType, loginSchema } from 'hooks/helpers/login';
 import { parseQueryParams } from 'helpers/navigation/parseQueryParams';
 import { decodeAndSanitizeUrl } from 'helpers/navigation/decodeAndSanitizeUrl';

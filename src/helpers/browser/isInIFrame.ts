@@ -1,4 +1,4 @@
-import { safeWindow } from 'lib/sdkDapp';
+import { safeWindow } from 'lib/sdkDappCore';
 
 export const isInIframe = () => {
   if (!('location' in safeWindow)) {

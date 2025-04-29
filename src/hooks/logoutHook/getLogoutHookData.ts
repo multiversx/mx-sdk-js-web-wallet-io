@@ -2,7 +2,7 @@ import { InferType, object } from 'yup';
 import { decodeAndSanitizeUrl } from 'helpers/navigation/decodeAndSanitizeUrl';
 import { parseQueryParams } from 'helpers/navigation/parseQueryParams';
 import { validUrlSchema } from 'hooks/helpers/validUrlSchema/validUrlSchema';
-import { safeWindow, sanitizeCallbackUrl } from 'lib/sdkDapp';
+import { safeWindow, sanitizeCallbackUrl } from 'lib/sdkDappCore';
 
 const schema = object({
   callbackUrl: validUrlSchema.required()
