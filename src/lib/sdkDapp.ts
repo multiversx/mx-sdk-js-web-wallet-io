@@ -14,6 +14,7 @@ export { sanitizeCallbackUrl } from '@multiversx/sdk-dapp/utils/sanitizeCallback
 
 export {
   stringIsFloat,
-  stringIsInteger,
-  safeWindow
-} from '@multiversx/sdk-dapp-utils';
+  stringIsInteger
+} from '@multiversx/sdk-dapp/utils/validation';
+
+export { safeWindow } from '@multiversx/sdk-dapp/lib/sdkDappUtils';
