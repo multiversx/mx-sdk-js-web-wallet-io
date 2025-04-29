@@ -1,4 +1,4 @@
-import { buildUrlParams } from 'lib/sdkDapp';
+import { buildUrlParams } from 'lib/sdkDappCore';
 import { sanitizeCallbackUrlSearchParams } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeCallbackUrlSearchParams';
 
 interface ReplyUrlType {
