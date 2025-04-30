@@ -1,5 +1,5 @@
 import { MAX_TRANSACTIONS } from 'constants/index';
-import { safeWindow } from 'lib/sdkDapp';
+import { safeWindow } from 'lib/sdkDappUtils';
 import qs from 'qs';
 
 export const parseQueryParams = (query: string) => {
