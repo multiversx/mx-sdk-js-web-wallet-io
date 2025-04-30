@@ -11,10 +11,3 @@ export {
 } from '@multiversx/sdk-dapp/services/nativeAuth/helpers';
 
 export { sanitizeCallbackUrl } from '@multiversx/sdk-dapp/utils/sanitizeCallbackUrl';
-
-export {
-  stringIsFloat,
-  stringIsInteger
-} from '@multiversx/sdk-dapp/utils/validation';
-
-export { safeWindow } from '@multiversx/sdk-dapp/lib/sdkDappUtils';
