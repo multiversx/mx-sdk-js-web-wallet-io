@@ -76,9 +76,7 @@ export const transactionFields = ({
           return stringIsInteger(value);
         }
         return true;
-      }),
-    relayer: string(),
-    relayerSignature: string()
+      })
   };
 };
 
