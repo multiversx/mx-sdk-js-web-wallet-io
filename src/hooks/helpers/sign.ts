@@ -45,6 +45,8 @@ export const signBaseSchema = object({
   guardian: nullableArrayOrString,
   guardianSignature: nullableArrayOrString,
   gasPrice: arrayOrString,
+  relayer: nullableArrayOrString,
+  relayerSignature: nullableArrayOrString,
   receiver: mixed().test(
     'sameNumberOfValues',
     'All transactions must have equal receiver field values',
@@ -156,7 +158,9 @@ export const signTxSchema = ({
         return value === chainId;
       }
       return true;
-    })
+    }),
+    relayer: string(),
+    relayerSignature: string()
   }).required();
 };
 

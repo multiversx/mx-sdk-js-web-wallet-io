@@ -1,13 +1,13 @@
-export { buildUrlParams } from '@multiversx/sdk-dapp/utils/buildUrlParams';
+export { buildUrlParams } from '@multiversx/sdk-dapp/out/utils/window';
 export {
   isStringBase64,
   decodeBase64,
   encodeToBase64
-} from '@multiversx/sdk-dapp/utils/decoders';
-export { isContract } from '@multiversx/sdk-dapp/utils/smartContracts';
+} from '@multiversx/sdk-dapp/out/utils/decoders';
+export { isContract } from '@multiversx/sdk-dapp/out/utils/validation';
 export {
   decodeLoginToken,
   decodeNativeAuthToken
-} from '@multiversx/sdk-dapp/services/nativeAuth/helpers';
+} from '@multiversx/sdk-dapp/out/services/nativeAuth/helpers';
 
-export { sanitizeCallbackUrl } from '@multiversx/sdk-dapp/utils/sanitizeCallbackUrl';
+export { sanitizeCallbackUrl } from '@multiversx/sdk-dapp/out/utils/window';
