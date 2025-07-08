@@ -1,4 +1,4 @@
-import isString from 'lodash/isString';
+import isString from 'lodash.isstring';
 import { extractDomain } from './extractDomain';
 import { addHttpsToUrl } from 'helpers/navigation/addHttpsToUrl/addHttpsToUrl';
 import { decodeLoginToken } from 'lib/sdkDapp';

@@ -1,4 +1,4 @@
-import omit from 'lodash/omit';
+import omit from 'lodash.omit';
 import { array, InferType, lazy, mixed, object, string } from 'yup';
 import { transactionFields, TransactionFieldsType } from './transaction';
 import { validUrlSchema } from './validUrlSchema';

@@ -3,7 +3,7 @@ import {
   WindowProviderResponseEnums,
   ReplyWithPostMessageType
 } from 'lib/sdkDappCrossWindowProvider';
-import isUndefined from 'lodash/isUndefined';
+import isUndefined from 'lodash.isundefined';
 
 interface BaseType {
   postMessageData: ReplyWithPostMessageType;
