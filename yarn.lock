@@ -849,9 +849,9 @@
   integrity sha512-c0tIdQUnbBLSt6NYU+OpeGPYdL0+GV547HeHT8Xc0BKQ7Cj0v82QUoA2QRtWrR1G4MNZmLsIacZSsf6DrIS2Bw==
 
 "@multiversx/sdk-core@^14.x":
-  version "14.2.5"
-  resolved "https://registry.npmjs.org/@multiversx/sdk-core/-/sdk-core-14.2.5.tgz#c6f1659ac2fda5eeb63a008583ea4722e7c310dc"
-  integrity sha512-ScnwWHg9m7tJ6CGeptm3Erf2gAiluzQ2LA0D3bpCsm8QhLlHTqYtX8zHR65U5fE2JTBXw4k6urbUnnuyJ+OKYg==
+  version "14.2.6"
+  resolved "https://registry.npmjs.org/@multiversx/sdk-core/-/sdk-core-14.2.6.tgz#61430336ab0cc64269f402a54a47b738f2536cd2"
+  integrity sha512-dATWBOpCf1hK/OQpewWTsyAY7wfIZDQd9oQYT46R1UjK+60Uad+evB/EZGHd8tsBw/e9+hUKyQYJjQr9t4jxfQ==
   dependencies:
     "@multiversx/sdk-transaction-decoder" "1.0.2"
     "@noble/ed25519" "1.7.3"
@@ -2067,7 +2067,7 @@ available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-axios@1.10.0, axios@^1.10.0:
+axios@^1.10.0:
   version "1.10.0"
   resolved "https://registry.npmjs.org/axios/-/axios-1.10.0.tgz#af320aee8632eaf2a400b6a1979fa75856f38d54"
   integrity sha512-/1xYAC4MP/HEG+3duIhFr4ZQXR4sQXOIe+o6sdqzeykGLx6Upp/1p8MHqhINOvGeP7xyNHe7tsiJByc4SSVUxw==
