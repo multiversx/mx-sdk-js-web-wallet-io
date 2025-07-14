@@ -30,7 +30,7 @@
     "@multiversx/sdk-dapp": "^5.x",
     "@multiversx/sdk-dapp-utils": "^2.x",
     "@multiversx/sdk-web-wallet-cross-window-provider": "^3.x",
-    "axios": ">=1.7.4",
+    "axios": "1.10.0",
     "bignumber.js": ">=9.0.2"
   },
   "dependencies": {
@@ -51,8 +51,8 @@
     "@types/qs": "6.9.16",
     "@typescript-eslint/eslint-plugin": "7.8.0",
     "@typescript-eslint/parser": "7.8.0",
-    "axios": ">=1.7.4",
-    "bignumber.js": ">=9.0.2",
+    "axios": "1.10.0",
+    "bignumber.js": "^9.x",
     "eslint": "9.1.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-standard": "17.1.0",
