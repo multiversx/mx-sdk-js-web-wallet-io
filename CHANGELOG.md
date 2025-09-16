@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- [Added missing field on loginHook](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/59)
+
 ## [[3.1.0](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/58)] - 2025-07-10
 
 - [Migrated to sdk-dapp v5 major version](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/57)
