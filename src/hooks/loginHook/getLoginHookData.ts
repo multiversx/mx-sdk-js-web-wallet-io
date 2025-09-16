@@ -7,6 +7,7 @@ export const getLoginHookData: (search: string) => {
   hookUrl: string;
   callbackUrl: string;
   token?: string;
+  method?: string;
 } | null = (search) => {
   if (!search) {
     return null;
