@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[3.2.0](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/62)] - 2025-10-29
+
+- [Added missing field on loginHook](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/61)
+
 ## [[3.1.1](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/60)] - 2025-09-16
 
 - [Added missing field on loginHook](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/59)

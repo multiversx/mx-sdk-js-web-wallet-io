@@ -1,6 +1,6 @@
 {
   "name": "@multiversx/sdk-js-web-wallet-io",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "private": false,
   "main": "out/index.js",
   "types": "out/index.d.ts",
@@ -26,10 +26,11 @@
     "compile-next": "rimraf out && tsc --p tsconfig.next.json && tsc-alias --project tsconfig.next.json"
   },
   "peerDependencies": {
-    "@multiversx/sdk-core": "^14.x",
+    "@multiversx/sdk-core": "^14.x || ^15.x",
     "@multiversx/sdk-dapp": "^5.x",
     "@multiversx/sdk-dapp-utils": "^2.x",
     "@multiversx/sdk-web-wallet-cross-window-provider": "^3.x",
+    "@multiversx/sdk-web-wallet-provider": "^5.x",
     "axios": "^1.10.0",
     "bignumber.js": "^9.x"
   },
@@ -39,10 +40,11 @@
     "yup": "0.32.11"
   },
   "devDependencies": {
-    "@multiversx/sdk-core": "^14.x",
+    "@multiversx/sdk-core": "^15.x",
     "@multiversx/sdk-dapp": "^5.x",
     "@multiversx/sdk-dapp-utils": "^2.x",
     "@multiversx/sdk-web-wallet-cross-window-provider": "^3.x",
+    "@multiversx/sdk-web-wallet-provider": "^5.x",
     "@swc/core": "1.5.7",
     "@swc/jest": "0.2.36",
     "@types/jest": "29.5.13",
