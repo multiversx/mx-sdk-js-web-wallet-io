@@ -8,13 +8,15 @@ module.exports = {
   transform: {
     "^.+\\.(ts|js|tsx|jsx)$": ["@swc/jest"],
   },
-  transformIgnorePatterns: ["node_modules/(^.+\\\\.(ts|js|tsx|jsx)$)"],
+  transformIgnorePatterns: ["node_modules/(^.+\\\\.(ts|js|tsx|jsx|cjs|mjs)$)"],
   testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
   moduleFileExtensions: [
     // Place tsx and ts to beginning as suggestion from Jest team
     // https://jestjs.io/docs/configuration#modulefileextensions-arraystring
     "tsx",
     "ts",
+    "cjs",
+    "mjs",
     "web.js",
     "js",
     "web.ts",

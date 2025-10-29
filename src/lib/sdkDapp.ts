@@ -1,4 +1,3 @@
-export { buildUrlParams } from '@multiversx/sdk-dapp/out/utils/window';
 export {
   isStringBase64,
   decodeBase64,
@@ -10,4 +9,7 @@ export {
   decodeNativeAuthToken
 } from '@multiversx/sdk-dapp/out/services/nativeAuth/helpers';
 
-export { sanitizeCallbackUrl } from '@multiversx/sdk-dapp/out/utils/window';
+export {
+  sanitizeCallbackUrl,
+  buildUrlParams
+} from '@multiversx/sdk-dapp/out/utils/window';
