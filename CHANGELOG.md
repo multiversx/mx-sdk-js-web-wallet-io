@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [[3.2.1](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/64)] - 2025-11-24
+## [[3.2.1](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/65)] - 2025-11-24
 
-- [Fixed sdk-dapp imports](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/63)
+- [Fixed sdk-dapp imports](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/64)
 
 ## [[3.2.0](https://github.com/multiversx/mx-sdk-js-web-wallet-io/pull/62)] - 2025-10-29
 
