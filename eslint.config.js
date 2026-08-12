@@ -1,23 +1,40 @@
-[
+const js = require('@eslint/js');
+const tseslint = require('typescript-eslint');
+const prettierRecommended = require('eslint-plugin-prettier/recommended');
+const importPlugin = require('eslint-plugin-import-x');
+const globals = require('globals');
+
+module.exports = tseslint.config(
   {
-    env: {
-      es2021: true,
-      node: true
-    },
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
+    ignores: ['out/**', 'node_modules/**']
+  },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  prettierRecommended,
+  {
+    files: ['src/**/*.{ts,tsx,js,jsx}'],
+    languageOptions: {
       ecmaVersion: 2021,
       sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true
+      globals: {
+        ...globals.es2021,
+        ...globals.node,
+        ...globals.browser
       },
-      project: './tsconfig.json'
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
+      }
+    },
+    plugins: {
+      'import-x': importPlugin
     },
     settings: {
-      'import/parsers': {
+      'import-x/parsers': {
         '@typescript-eslint/parser': ['.ts', '.tsx']
       },
-      'import/resolver': {
+      'import-x/resolver': {
         node: {
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
           moduleDirectory: ['node_modules', 'src/']
@@ -27,14 +44,8 @@
         }
       }
     },
-    extends: [
-      'plugin:@typescript-eslint/recommended',
-      'prettier',
-      'plugin:prettier/recommended'
-    ],
-    plugins: ['prettier', 'import'],
     rules: {
-      'import/order': [
+      'import-x/order': [
         'warn',
         {
           groups: ['builtin', 'external', 'internal'],
@@ -58,7 +69,6 @@
           endOfLine: 'lf'
         }
       ],
-      '@typescript-eslint/indent': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-use-before-define': [
         'error',
@@ -86,4 +96,4 @@
       '@typescript-eslint/no-shadow': 'off'
     }
   }
-];
+);

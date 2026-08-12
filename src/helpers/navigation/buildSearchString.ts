@@ -2,8 +2,7 @@ import { IPlainTransactionObject } from '@multiversx/sdk-core';
 
 export const buildSearchString = (
   plainTransactions:
-    | Record<string, number | string>[]
-    | IPlainTransactionObject[] = []
+    Record<string, number | string>[] | IPlainTransactionObject[] = []
 ) => {
   const response: Record<string, string[]> = {};
 

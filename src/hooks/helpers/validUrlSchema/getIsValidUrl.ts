@@ -1,9 +1,8 @@
 import { string } from 'yup';
-import { isFirefox, isSafari } from 'helpers';
 import { decodeAndSanitizeUrl } from 'helpers/navigation/decodeAndSanitizeUrl';
 import { extractDomain } from '../extractDomain';
-import { getNativeAuthTokenDomain } from '../getNativeAuthTokenDomain';
 import { getDomain } from '../getDomain';
+import { getNativeAuthTokenDomain } from '../getNativeAuthTokenDomain';
 
 export const getIsValidUrl = ({
   value,
@@ -63,7 +62,7 @@ export const getIsValidUrl = ({
   try {
     const urlValidationSchema = string().url();
     urlValidationSchema.validateSync(url);
-  } catch (err) {
+  } catch {
     return false;
   }
 
