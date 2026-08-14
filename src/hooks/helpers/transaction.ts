@@ -1,7 +1,7 @@
-import { string, mixed, AnySchema, object } from 'yup';
-import { validUrlSchema } from './validUrlSchema';
-import { isContract, stringIsInteger } from 'lib';
+import { string, mixed, object } from 'yup';
 import { isNftOrMultiEsdtTx } from 'helpers';
+import { isContract, stringIsInteger } from 'lib';
+import { validUrlSchema } from './validUrlSchema';
 
 export interface TransactionFieldsType {
   isMainnet: boolean;
@@ -16,11 +16,11 @@ export const transactionFields = ({
 }: TransactionFieldsType) => {
   return {
     data: mixed(),
-    token: string().when(['data'], (data: string, schema: AnySchema) => {
+    token: string().when(['data'], ([data], schema) => {
       return schema.test(
         'notAllowed',
         'Token and data not allowed',
-        (value: any) => !Boolean(value && data)
+        (value: any) => !(value && data)
       );
     }),
     sender: string(),

@@ -1,6 +1,6 @@
+import qs from 'qs';
 import { MAX_TRANSACTIONS } from 'constants/index';
 import { safeWindow } from 'lib/sdkDappUtils';
-import qs from 'qs';
 
 export const parseQueryParams = (query: string) => {
   if (!query?.includes('?')) {

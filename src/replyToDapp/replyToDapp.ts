@@ -1,9 +1,9 @@
 import { ReplyWithPostMessageType } from 'lib/sdkDappCrossWindowProvider';
+import { safeWindow } from 'lib/sdkDappUtils';
 import { ReplyToDappType } from './replyToDapp.types';
 import { replyWithPostMessage } from './replyWithPostMessage';
 import { replyWithRedirect } from './replyWithRedirect';
 import { isInIframe } from '../helpers/browser/isInIFrame';
-import { safeWindow } from 'lib/sdkDappUtils';
 
 export const replyToDapp = (
   props: ReplyToDappType,

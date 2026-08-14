@@ -1,11 +1,15 @@
-import omit from 'lodash/omit';
 import { array, InferType, lazy, mixed, object, string } from 'yup';
+import { MAX_TRANSACTIONS } from 'constants/index';
+import { isNftOrMultiEsdtTx, parseQueryParams } from 'helpers';
+import { stringIsInteger } from 'lib/sdkDappUtils';
+import { HookSearchParamsEnum } from 'types';
 import { transactionFields, TransactionFieldsType } from './transaction';
 import { validUrlSchema } from './validUrlSchema';
-import { isNftOrMultiEsdtTx, parseQueryParams } from 'helpers';
-import { HookSearchParamsEnum } from 'types';
-import { stringIsInteger } from 'lib/sdkDappUtils';
-import { MAX_TRANSACTIONS } from 'constants/index';
+
+const omitKeys = (obj: object, keys: string[]) =>
+  Object.fromEntries(
+    Object.entries(obj).filter(([key]) => !keys.includes(key))
+  );
 
 const validString = mixed().test(
   'string',
@@ -26,7 +30,7 @@ export const arrayOrString = lazy((value) =>
 const nullableArrayOrString = lazy((value) => {
   switch (true) {
     case value === undefined:
-      return mixed().notRequired();
+      return mixed().optional();
     case typeof value === 'string':
       return validString;
     default:
@@ -88,7 +92,7 @@ export const signBaseSchema = object({
       'sameNumberOfValues',
       'All transactions must have equal array values',
       function () {
-        const fields = omit(this.parent, ['modal', 'callbackUrl', 'data']);
+        const fields = omitKeys(this.parent, ['modal', 'callbackUrl', 'data']);
 
         const allValues = Object.values(fields);
         const allArrays = allValues.every((value) => Array.isArray(value));
@@ -103,7 +107,7 @@ export const signBaseSchema = object({
       'differentDataTypes',
       'Values must be either strings or arrays',
       function () {
-        const fields = omit(this.parent, ['modal', 'callbackUrl']);
+        const fields = omitKeys(this.parent, ['modal', 'callbackUrl']);
         const allValues = Object.values(fields);
         const someArrays = allValues.some((value) => Array.isArray(value));
         const someStrings = allValues.some(
@@ -179,7 +183,10 @@ export const parseSignUrl = <T>(search: string): ParseSignUrlReturnType<T> => {
     type FieldType = keyof typeof fields;
 
     Object.keys(fields).forEach((key) => {
-      const values: string[] = fields[key as FieldType];
+      // The parsed query object is untyped at this boundary (qs.parse output),
+      // and yup 1.x infers mixed()/lazy() fields as unions rather than `any`.
+      // The Array.isArray guard below does the narrowing.
+      const values: unknown = fields[key as FieldType];
 
       if (Array.isArray(values)) {
         values.forEach((value, i) => {

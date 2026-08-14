@@ -1,7 +1,7 @@
-import { parseSignUrl, signBaseSchema, signTxSchema } from 'hooks/helpers/sign';
 import { IS_DEVELOPMENT, IS_TEST } from 'constants/index';
-import { sanitizeSignHookCallbackUrl } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeSignHookCallbackUrl';
 import { parseQueryParams } from 'helpers/navigation/parseQueryParams';
+import { sanitizeSignHookCallbackUrl } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeSignHookCallbackUrl';
+import { parseSignUrl, signBaseSchema, signTxSchema } from 'hooks/helpers/sign';
 import { SignBaseHookType } from 'hooks/types';
 
 const shouldLogErrors = IS_DEVELOPMENT || IS_TEST;
