@@ -8,7 +8,7 @@ export const isInIframe = () => {
 
   try {
     return safeWindow.self !== safeWindow.top;
-  } catch (e) {
+  } catch {
     return true;
   }
 };

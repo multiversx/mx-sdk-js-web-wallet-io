@@ -3,7 +3,6 @@ import {
   WindowProviderResponseEnums,
   ReplyWithPostMessageType
 } from 'lib/sdkDappCrossWindowProvider';
-import isUndefined from 'lodash/isUndefined';
 
 interface BaseType {
   postMessageData: ReplyWithPostMessageType;
@@ -26,7 +25,7 @@ export const replyWithPostMessage = ({
   callbackUrl,
   target
 }: ReplyWithPostMessageJoinedType): void => {
-  if (isUndefined(props.payload.data)) {
+  if (props.payload.data === undefined) {
     console.error('Unable to sign transaction', props.payload.error);
     return;
   }

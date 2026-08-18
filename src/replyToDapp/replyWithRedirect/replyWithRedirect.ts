@@ -1,20 +1,20 @@
 import qs from 'qs';
 
-import { assignWindowLocation } from './assignWindowLocation';
-import { replyQsUrl } from './replyQsUrl';
-import { replyUrl } from './replyUrl';
+import { buildSearchString } from 'helpers/navigation/buildSearchString';
+import { objectValuesToString } from 'helpers/operations/objectValuesToString';
+import { sanitizeCallbackUrlSearchParams } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeCallbackUrlSearchParams';
 import {
   WindowProviderResponseEnums,
   ReplyWithPostMessageType
 } from 'lib/sdkDappCrossWindowProvider';
-import { HookResponseStatusEnum } from 'types/hooks.enum';
-import { sanitizeCallbackUrlSearchParams } from 'hooks/helpers/sanitizeSignHookCallbackUrl/sanitizeCallbackUrlSearchParams';
 import {
   WALLET_PROVIDER_CALLBACK_PARAM,
   WALLET_PROVIDER_CALLBACK_PARAM_TX_SIGNED
 } from 'lib/sdkWebWalletProvider';
-import { objectValuesToString } from 'helpers/operations/objectValuesToString';
-import { buildSearchString } from 'helpers/navigation/buildSearchString';
+import { HookResponseStatusEnum } from 'types/hooks.enum';
+import { assignWindowLocation } from './assignWindowLocation';
+import { replyQsUrl } from './replyQsUrl';
+import { replyUrl } from './replyUrl';
 
 export interface ReplyWithRedirectType {
   data?: ReplyWithPostMessageType;

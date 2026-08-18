@@ -8,7 +8,7 @@ export const validUrlSchema = string().test(function (value) {
     try {
       const isValidUrl = getIsValidUrl({ value, token });
       return isValidUrl;
-    } catch (e) {
+    } catch {
       return false;
     }
   }

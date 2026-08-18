@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import { isDomainValid } from './isDomainValid';
 import { decodeNativeAuthToken } from 'lib/sdkDapp';
+import { isDomainValid } from './isDomainValid';
 
 export async function validateToken({
   callbackUrl,

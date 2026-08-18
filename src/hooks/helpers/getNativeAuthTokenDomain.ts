@@ -1,7 +1,6 @@
-import isString from 'lodash/isString';
-import { extractDomain } from './extractDomain';
 import { addHttpsToUrl } from 'helpers/navigation/addHttpsToUrl/addHttpsToUrl';
 import { decodeLoginToken } from 'lib/sdkDapp';
+import { extractDomain } from './extractDomain';
 
 export const getNativeAuthTokenDomain = ({
   token,
@@ -10,7 +9,7 @@ export const getNativeAuthTokenDomain = ({
   token?: string;
   fallbackDomain: string | null;
 }) => {
-  if (!token || !isString(token)) {
+  if (!token || typeof token !== 'string') {
     return fallbackDomain;
   }
 

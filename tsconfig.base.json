@@ -26,7 +26,10 @@
     ],
     "exclude": [
         "node_modules",
-        "out"
+        "out",
+        "src/__mocks__",
+        "src/**/tests",
+        "src/**/*.spec.ts"
     ],
   }
   

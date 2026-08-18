@@ -1,6 +1,8 @@
+import { safeWindow } from 'lib/sdkDappUtils';
+
 export const IS_DEVELOPMENT =
   process.env.NODE_ENV === 'development' ||
-  window?.location?.hostname === 'localhost';
+  safeWindow?.location?.hostname === 'localhost';
 
 export const MAX_TRANSACTIONS = 100;
 
